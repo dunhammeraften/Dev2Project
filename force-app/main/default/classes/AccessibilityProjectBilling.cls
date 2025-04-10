@@ -14,7 +14,7 @@ global class AccessibilityProjectBilling{
           String status = stub.billProject(project);
   
           // If response is ok, set Accessibility Project Status = Complete
-          if (status == 'OK') {
+          if (status == 'ok') {
               Accessibility_Project__c ap = [SELECT Id, Status__c FROM Accessibility_Project__c WHERE Id = :projectId LIMIT 1];
               ap.Status__c = 'Complete';
               update ap;
